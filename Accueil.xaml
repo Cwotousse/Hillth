@@ -1,0 +1,450 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialMenu="clr-namespace:MaterialMenu;assembly=MaterialMenu"
+        xmlns:local="clr-namespace:premierTest"
+        xmlns:ee="http://schemas.microsoft.com/expression/2010/effects" x:Class="premierTest.Accueil"
+        mc:Ignorable="d"
+        Title="Hillth" Height="700" Width="900"
+        WindowState="Normal"
+        WindowStartupLocation="CenterScreen">
+    <Grid Margin="0,0,2,30"
+          HorizontalAlignment="Right">
+        <Image x:Name="background"
+               Source="background2.png"
+               Margin="-135.759,148,-99,-192"/>
+
+        <Rectangle x:Name="rect_logo"
+                   Fill="#FFBFDAD9"
+                   Height="154.5"
+                   VerticalAlignment="Top"
+                   Margin="0,0,-3.667,0"/>
+
+        <Image x:Name="image"
+               Height="150"
+               VerticalAlignment="Top"
+               Source="banniere.png"
+               Margin="0,0,10,0"/>
+
+        <Canvas x:Name="Can_MenuLat"
+                HorizontalAlignment="Left"
+                Margin="0,232.55,0,325.117"
+                Width="141">
+
+            <Rectangle x:Name="rect_lab"
+                       Height="34.5"
+                       Canvas.Left="-15"
+                       StrokeThickness="1"
+                       Width="156"
+                       RadiusX="10"
+                       RadiusY="10"
+                       Canvas.Top="36.5">
+
+                <Rectangle.Effect>
+                    <BlurEffect KernelType="Box" Radius="3"/>
+                </Rectangle.Effect>
+            </Rectangle>
+            <Rectangle x:Name="rect_menu"
+                       RadiusY="10"
+                       RadiusX="10"
+                       StrokeThickness="1"
+                       Width="154.667"
+                       Height="208.333" 
+                       Canvas.Left="-15"
+                       Canvas.Top="71.5">
+                <Rectangle.Effect>
+                    <BlurEffect KernelType="Box" Radius="3"/>
+                </Rectangle.Effect>
+            </Rectangle>
+
+            <Label x:Name="label"
+                   Content="Menu"
+                   Canvas.Top="36.5"
+                   Width="59.493"
+                   Height="30" 
+                   Foreground="#FFD4574B" 
+                   FontFamily="Roboto"
+                   FontSize="20" 
+                   HorizontalAlignment="Left"
+                   Canvas.Left="41.333"
+                   Background="{x:Null}"/>
+
+            <StackPanel Orientation="Vertical"
+                        Canvas.Top="76"
+                        Height="203.833"
+                        Width="141">
+
+                <Button  Content="Ajouter patient"
+                         Width="140"
+                         Height="25"
+                         FontSize="13.333"
+                         FontFamily="Roboto" 
+                         Background="{x:Null}" 
+                         BorderBrush="{x:Null}"  
+                         Foreground="#FFD4574B" 
+                         Click="Button_Click_5"
+                         Margin="0,0,1,0"/>
+
+                <Button  Content="Ajouter médecin"
+                         Width="140"
+                         Height="25"
+                         FontSize="13.333"
+                         FontFamily="Roboto" 
+                         Background="{x:Null}" 
+                         BorderBrush="{x:Null}"  
+                         Foreground="#FFD4574B" 
+                         Margin="0,0,1,0"
+                         Click="Button_Click_6"/>
+
+                <Button  Content="Rechercher"
+                         Width="140"
+                         Height="25" 
+                         FontSize="13.333"
+                         FontFamily="Roboto" 
+                         Background="{x:Null}" 
+                         BorderBrush="{x:Null}" 
+                         Foreground="#FFD4574B" 
+                         Click="Button_Click_2"/>
+
+                <Button  Content="Profil"
+                         Width="140" 
+                         Height="25" 
+                         FontSize="13.333"
+                         FontFamily="Roboto"
+                         Background="{x:Null}"
+                         BorderBrush="{x:Null}" 
+                         Click="Button_Click_1" 
+                         Foreground="#FFD4574B" 
+                         Margin="0,0,1,0" />
+
+                <Button  Content="Statistiques"
+                         Width="140" 
+                         Height="25" 
+                         FontSize="13.333" 
+                         FontFamily="Roboto" 
+                         Background="{x:Null}" 
+                         BorderBrush="{x:Null}" 
+                         Foreground="#FFD4574B" 
+                         Click="Button_Click_3"/>
+
+                <Button  Content="Se deconnecter"
+                         Width="140"
+                         Height="25"
+                         FontSize="13.333"
+                         FontFamily="Roboto"
+                         Background="{x:Null}" 
+                         BorderBrush="{x:Null}" 
+                         Click="Button_Click" 
+                         Foreground="#FFD4574B"/>
+
+                <Button  Content="Quitter"
+                         Width="140"
+                         Height="25" 
+                         FontSize="13.333"
+                         FontFamily="Roboto" 
+                         Background="{x:Null}" 
+                         BorderBrush="{x:Null}"  
+                         Foreground="#FFD4574B" 
+                         Click="Button_Click_4"/>
+            </StackPanel>
+        </Canvas>
+
+        <Rectangle x:Name="rect_contenu"
+                   Stroke="#FFD4574B" 
+                   RadiusY="10" 
+                   RadiusX="10"
+                   Margin="219,192.333,96.4,180.167" 
+                   Fill="White" 
+                   Opacity="0.7"/>
+        <Image x:Name="img_Logo"
+               Source="logoHillth.png"
+               OpacityMask="#FF1A6A91" 
+               Margin="0,148,-99,167"
+               HorizontalAlignment="Right" 
+               Width="451.953"/>
+
+        <ToggleButton x:Name="toggle_Menu"
+                      Content="ToggleButton" 
+                      HorizontalAlignment="Left" 
+                      Margin="29.333,90.272,0,0"
+                      VerticalAlignment="Top" 
+                      RenderTransformOrigin="0.333,-0.323" 
+                      Height="59.728" 
+                      Width="55.667" 
+                      Checked="toggle_Menu_Checked" 
+                      Unchecked="toggle_Menu_Unchecked" 
+                      Background="{x:Null}" 
+                      IsChecked="True"/>
+
+        <Canvas x:Name="Can_Profil"
+                Margin="219,205.5,96.4,167">
+
+            <TextBlock x:Name="txt_Nom"
+                       FontSize="26.667"
+                       FontFamily="Roboto" 
+                       Height="50" 
+                       Width="448"  
+                       Foreground="#FFD4574B" 
+                       Canvas.Left="14" 
+                       Canvas.Top="8">
+                <InlineUIContainer>
+            	</InlineUIContainer>
+            </TextBlock>
+
+            <TextBlock x:Name="txt_NumINAMI"
+                       Text ="" 
+                       FontSize="26.667"
+                       FontFamily="Roboto" 
+                       Height="50"  
+                       Foreground="#FFD4574B" 
+                       Canvas.Left="14" 
+                       Canvas.Top="158" 
+                       Width="448"/>
+
+            <TextBlock x:Name="txt_NumTel"
+                       Text ="" 
+                       FontSize="26.667"
+                       FontFamily="Roboto"  
+                       Foreground="#FFD4574B" 
+                       Height="50" 
+                       Canvas.Left="14" 
+                       Canvas.Top="103" 
+                       Width="448"/>
+
+            <TextBlock x:Name="txt_Spec"
+                       Text ="" 
+                       FontSize="26.667" 
+                       FontFamily="Roboto" 
+                       Height="35" 
+                       Width="448"  
+                       Foreground="#FFD4574B"
+                       Canvas.Top="55"
+                       Canvas.Left="14"/>
+
+            <TextBlock x:Name="txt_Adr"
+                       Text ="" 
+                       FontSize="26.667" 
+                       FontFamily="Roboto" 
+                       Height="39"  
+                       Foreground="#FFD4574B" 
+                       Canvas.Left="14" 
+                       Canvas.Top="208" 
+                       Width="520"/>
+        </Canvas>
+
+        <!-- Recherche du patient -->
+        <Canvas x:Name="Can_Recherche"
+                Margin="240.454,192.333,104.886,180.167" Visibility="Hidden">
+
+            <Label x:Name="label1" 
+                   Content="Rechercher les patients par : " 
+                   FontFamily="Roboto" 
+                   FontSize="20" 
+                   Foreground="#FFD4574B" 
+                   FontWeight="Bold" 
+                   Width="280.793"/>
+
+            <TextBlock x:Name="chk_Nom"
+                       Width="100" 
+                       Background="#FFECF4F4" 
+                       Foreground="#FFD4574B" 
+                       FontFamily="Muli" 
+                       FontSize="20" 
+                       Height="32" 
+                       Canvas.Top="45" 
+                       Text="Nom" />
+
+            <TextBlock x:Name="chk_Pre"
+                       Text="Prenom" 
+                       Background="#FFECF4F4"  
+                       Foreground="#FFD4574B" 
+                       FontFamily="Muli" 
+                       FontSize="20" 
+                       Height="26" 
+                       Canvas.Top="76" 
+                       Width="100" />
+
+            <TextBlock x:Name="chk_ID"
+                       Text="Numero patient" 
+                       Background="#FFECF4F4"  
+                       Foreground="#FFD4574B" 
+                       FontFamily="Muli" 
+                       FontSize="20" 
+                       Width="176" 
+                       Height="28" 
+                       Canvas.Top="107" />
+
+            <TextBlock x:Name="chk_Mutuelle" 
+                       Text="Mutuelle" 
+                       Width="109" 
+                       Background="#FFF1F2F7"  
+                       Foreground="#FFD4574B" 
+                       FontFamily="Muli" 
+                       FontSize="20" 
+                       Height="28" 
+                       Canvas.Top="150" />
+
+            <TextBlock x:Name="chk_DernierHopital" 
+                       Text="Dernier hôpital" 
+                       Width="166" 
+                       Background="#FFECF4F4"  
+                       Foreground="#FFD4574B" 
+                       FontFamily="Muli" 
+                       FontSize="20" Height="32" 
+                       Canvas.Top="192" />
+
+            <Canvas x:Name="Can_ChampRech"
+                    Height="174.456" 
+                    Canvas.Left="180.573" 
+                    Canvas.Top="44" 
+                    Width="139.427">
+
+                <TextBox x:Name="txt_NomRep"
+                         Height="28" 
+                         TextWrapping="Wrap" 
+                         Width="139" 
+                         SelectionBrush="#FFFF6501" 
+                         Foreground="#FFD4574B" 
+                         FontFamily="Muli" 
+                         FontSize="16" 
+                         Canvas.Left="0.427"/>
+
+                <TextBox x:Name="txt_PreRep"
+                         Height="28" 
+                         TextWrapping="Wrap" 
+                         Canvas.Top="33" 
+                         Width="139" 
+                         SelectionBrush="#FFFF6501" 
+                         Foreground="#FFD4574B" 
+                         FontFamily="Muli" 
+                         FontSize="16" 
+                         Canvas.Left="0.427"/>
+                <TextBox x:Name="txt_IDRep" 
+                         Height="28" 
+                         TextWrapping="Wrap" 
+                         Canvas.Top="64" 
+                         Width="139" 
+                         SelectionBrush="#FFFF6501" 
+                         Foreground="#FFD4574B" 
+                         FontFamily="Muli" 
+                         FontSize="16" 
+                         Canvas.Left="0.427"/>
+
+                <ComboBox x:Name="ComboB_Mut" 
+                          VerticalAlignment="Stretch" 
+                          Canvas.Top="104"
+                          Width="139" 
+                          Foreground="#FFD4574B"/>
+
+                <ComboBox x:Name="ComboB_Hop" 
+                          VerticalAlignment="Stretch" 
+                          Canvas.Top="145" 
+                          Width="139" 
+                          Foreground="#FFD4574B"/>
+            </Canvas>
+
+            <Button x:Name="btn_rech"
+                    Content="Rechercher" 
+                    Canvas.Left="384"
+                    Canvas.Top="120" 
+                    Width="117" 
+                    Background="#FFD4574B" 
+                    BorderBrush="#FFD4574B" 
+                    Click="btn_rech_Click" 
+                    RenderTransformOrigin="0.558,-0.283"/>
+            <Button x:Name="btn_cancel"
+                    Content="Reset" 
+                    Canvas.Left="384" 
+                    Canvas.Top="156" 
+                    Width="117" 
+                    Background="#FFD4574B" 
+                    BorderBrush="#FFD4574B" 
+                    Click="btn_cancel_Click"/>
+
+            <Button x:Name="btn_affTout"
+                    Content="Tout afficher"
+                    Canvas.Left="384" 
+                    Canvas.Top="83" 
+                    Width="117" 
+                    Background="#FFD4574B" 
+                    BorderBrush="#FFD4574B" 
+                    Click="btn_AffTout_Click" 
+                    RenderTransformOrigin="0.558,-0.283"/>
+        </Canvas>
+
+        <Canvas x:Name="Can_Stat"
+                Margin="240,206,257.2,199.4" Visibility="Hidden">
+
+            <TextBlock x:Name="txtB_nbrPat"
+                       TextWrapping="Wrap" 
+                       Foreground="#FFD4574B" 
+                       FontFamily="Muli" 
+                       FontSize="16" 
+                       Height="23.2" 
+                       Width="320.333"/>
+
+            <TextBlock x:Name="txtB_PourcHoFe"
+                       TextWrapping="Wrap"
+                       Foreground="#FFD4574B" 
+                       FontFamily="Muli" 
+                       FontSize="16" 
+                       Height="44" 
+                       Canvas.Top="28" 
+                       Width="384"/>
+
+            <TextBlock x:Name="txtB_PourcMut"
+                       TextWrapping="WrapWithOverflow" 
+                       Foreground="#FFD4574B" 
+                       FontFamily="Muli" 
+                       FontSize="16" 
+                       Height="116" 
+                       Canvas.Top="77" 
+                       Width="320" />
+
+            <TextBlock x:Name="txtB_nbrDoc"
+                       TextWrapping="Wrap" 
+                       Foreground="#FFD4574B" 
+                       FontFamily="Muli" 
+                       FontSize="16" 
+                       Height="36" 
+                       Canvas.Top="198" 
+                       Width="384"/>
+        </Canvas>
+        <TextBlock x:Name="txt_username" 
+                   HorizontalAlignment="Left" 
+                   Margin="538,110,0,0" 
+                   TextWrapping="Wrap" 
+                   VerticalAlignment="Top" 
+                   Height="33" 
+                   Width="343" 
+                   FontFamily="MULI" 
+                   FontWeight="Bold" 
+                   Foreground="#FFD4574B" />
+
+        <ToggleButton x:Name="toggle_Video" 
+        	HorizontalAlignment="Left" 
+        	Margin="29,31,0,0"
+        	VerticalAlignment="Top" 
+        	RenderTransformOrigin="0.333,-0.323" 
+        	Height="59" 
+        	Width="56" 
+        	Checked="toggle_Video_Checked" 
+        	Unchecked="toggle_Video_Unchecked" 
+        	Background="{x:Null}" 
+        	IsChecked="False" />
+
+        <!-- Affiche la vidéo -->
+        <MediaElement x:Name="video_medecin"
+                      HorizontalAlignment="Left"
+                      Height="268"
+                      Margin="219,192,0,0"
+                      VerticalAlignment="Top"
+                      Width="576"
+                      Source="U:\BAC2\2emeQuadri\ProjetPersonnel\ProjetSolo\premierTest\premierTest\medecin.mp4" 
+                      Visibility="Hidden"
+                      LoadedBehavior="Manual"
+                      UnloadedBehavior="Stop"/>
+    </Grid>
+</Window>

@@ -1,0 +1,25 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:premierTest"
+        xmlns:ee="http://schemas.microsoft.com/expression/2010/effects" xmlns:ed="http://schemas.microsoft.com/expression/2010/drawing" x:Class="premierTest.Register"
+        mc:Ignorable="d"
+        Title="Register"
+        ResizeMode="CanResizeWithGrip"
+        WindowStartupLocation="CenterScreen" 
+        Width="700" Height="550"
+        WindowState="Normal" WindowStyle="ThreeDBorderWindow" 
+>
+    <Grid Margin="0,0,3.6,-19.2" Height="540" VerticalAlignment="Top">
+        <Label x:Name="titre" Content="CREATION DE COMPTE : Utilisateur" Margin="42,27,35.6,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" FontFamily="Muli" FontSize="33.333" Height="100" Foreground="#FFEF7A21"/>
+        <Image x:Name="image" HorizontalAlignment="Left" Margin="419,0,-89,256" Width="360" Source="logoHillth.png" Height="257" VerticalAlignment="Bottom"/>
+        <Label x:Name="lab_mdpUser"       Content="Mot de passe"                       FontSize="26.667" FontFamily="Muli" Height="50" Canvas.Left="2" Canvas.Top="234.982"  Foreground="#FFD4574B" Margin="42,260,467,230"/>
+        <Label x:Name="lab_IDUser"   Content="N° INAMI"                    FontSize="26.667" FontFamily="Muli" Height="50"  Canvas.Left="2" Canvas.Top="275"  Foreground="#FFD4574B" Margin="42,190,467,300"/>
+        <TextBox x:Name="txt_IDUser"  Height="50"  TextWrapping="Wrap"     MaxLength="12"            FontSize="26.667" Canvas.Left="322" Canvas.Top="275" Foreground="#FFD4574B" PreviewTextInput="verifChiffre_PreviewKeyDown" Margin="223,190,152,300"/>
+        <PasswordBox x:Name="mdpBoxUser"  Height="50" Canvas.Left="320" Canvas.Top="234.982" Foreground="#FFD4574B" Margin="223,260,152,230"/>
+        <Button x:Name="btn_precUser"     Height="50"  Content="Retour" Click="btn_prec_Click_1" Canvas.Left="2" Canvas.Top="454.136" Margin="42,447,348,43" />
+        <Button x:Name="btn_submitUser"   Height="50"  Content="Enregistrement"     Canvas.Left="327" Canvas.Top="454.136" Click="btn_submitUser_Click" Margin="354,447,36,43" />
+    </Grid>
+</Window>

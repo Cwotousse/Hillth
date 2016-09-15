@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11.375, 9.5" name="HillthDataClass">
+  <DataContextMoniker Name="/HillthDataClassDataContext" />
+  <nestedChildShapes>
+    <classShape Id="46e2e97d-5b69-49a6-82fc-29f75bc7392f" absoluteBounds="7, 2.75, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/HillthDataClassDataContext/Hopital" />
+      <nestedChildShapes>
+        <elementListCompartment Id="270e9d56-1050-43ad-9f0f-c4c0c7e4caad" absoluteBounds="7.015, 3.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="11cf4832-cee7-4bb2-9e34-33254e94b9fc" absoluteBounds="2.375, 7, 2, 1.3862939453125">
+      <DataClassMoniker Name="/HillthDataClassDataContext/Specialisation" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fd97b87e-e309-42ae-ad6d-7636baf50a80" absoluteBounds="2.39, 7.46, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="39ed8e37-c74e-4f60-a90a-826906a0c455" absoluteBounds="9.125, 2.75, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/HillthDataClassDataContext/Mutuelle" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4ea18d51-58dd-44ba-a613-31275c7758da" absoluteBounds="9.14, 3.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6877efc4-52a2-4565-be51-3d18d36c5da2" absoluteBounds="3.75, 2.5, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/HillthDataClassDataContext/Utilisateurs" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c2b56bfe-1e33-47e2-b8f2-28f4ddb12364" absoluteBounds="3.765, 2.96, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="43cfa1e9-cb9e-4f0d-ad81-5935976d2e8a" absoluteBounds="4.625, 4, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/HillthDataClassDataContext/Connexion" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9563b669-ab84-49e5-9a19-64cb0c951b6f" absoluteBounds="4.64, 4.46, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.1875 : 3.69399251302083); (5.1875 : 4)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/HillthDataClassDataContext/Utilisateurs/Utilisateurs_Connexion" />
+      <nodes>
+        <classShapeMoniker Id="6877efc4-52a2-4565-be51-3d18d36c5da2" />
+        <classShapeMoniker Id="43cfa1e9-cb9e-4f0d-ad81-5935976d2e8a" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="c6cc8827-734e-421e-a394-a740c839c339" absoluteBounds="9, 6.375, 2, 2.9247054036458331">
+      <DataClassMoniker Name="/HillthDataClassDataContext/FichePatient" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b3994442-4153-479d-8927-03194160d75f" absoluteBounds="9.015, 6.835, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(9 : 3.94399251302083); (9.375 : 4.31899251302083); (9.375 : 6); (8.625 : 6); (9 : 6.375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/HillthDataClassDataContext/Hopital/Hopital_FichePatient" />
+      <nodes>
+        <classShapeMoniker Id="46e2e97d-5b69-49a6-82fc-29f75bc7392f" />
+        <classShapeMoniker Id="c6cc8827-734e-421e-a394-a740c839c339" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(10.0625 : 3.94399251302083); (10.0625 : 6.375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/HillthDataClassDataContext/Mutuelle/Mutuelle_FichePatient" />
+      <nodes>
+        <classShapeMoniker Id="39ed8e37-c74e-4f60-a90a-826906a0c455" />
+        <classShapeMoniker Id="c6cc8827-734e-421e-a394-a740c839c339" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="2e145ba6-9313-435a-9e1f-a2c1db1daf11" absoluteBounds="6, 7.5, 2, 1.3862939453125">
+      <DataClassMoniker Name="/HillthDataClassDataContext/HistoriquePatient" />
+      <nestedChildShapes>
+        <elementListCompartment Id="db37c31c-d7ba-4505-80b3-f47413156f43" absoluteBounds="6.015, 7.96, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(9 : 8.19314697265625); (8 : 8.19314697265625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/HillthDataClassDataContext/FichePatient/FichePatient_HistoriquePatient" />
+      <nodes>
+        <classShapeMoniker Id="c6cc8827-734e-421e-a394-a740c839c339" />
+        <classShapeMoniker Id="2e145ba6-9313-435a-9e1f-a2c1db1daf11" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="a9d7ea6c-27e5-4964-bb02-915c14534f20" absoluteBounds="2.25, 4, 2, 2.5401025390625">
+      <DataClassMoniker Name="/HillthDataClassDataContext/Medecin" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2aa41e18-8ce6-42c2-b9c0-96932a6d635e" absoluteBounds="2.265, 4.46, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(4.25 : 4.59699625651042); (4.625 : 4.59699625651042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/HillthDataClassDataContext/Medecin/Medecin_Connexion" />
+      <nodes>
+        <classShapeMoniker Id="a9d7ea6c-27e5-4964-bb02-915c14534f20" />
+        <classShapeMoniker Id="43cfa1e9-cb9e-4f0d-ad81-5935976d2e8a" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.25 : 5.80168787575553); (7 : 5.80168787575553); (7 : 7.5)]" manuallyRouted="true" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/HillthDataClassDataContext/Medecin/Medecin_HistoriquePatient" />
+      <nodes>
+        <classShapeMoniker Id="a9d7ea6c-27e5-4964-bb02-915c14534f20" />
+        <classShapeMoniker Id="2e145ba6-9313-435a-9e1f-a2c1db1daf11" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3.3125 : 7); (3.3125 : 6.5401025390625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/HillthDataClassDataContext/Specialisation/Specialisation_Medecin" />
+      <nodes>
+        <classShapeMoniker Id="11cf4832-cee7-4bb2-9e34-33254e94b9fc" />
+        <classShapeMoniker Id="a9d7ea6c-27e5-4964-bb02-915c14534f20" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

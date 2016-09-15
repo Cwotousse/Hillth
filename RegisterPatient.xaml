@@ -1,0 +1,352 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:premierTest"
+        xmlns:ee="http://schemas.microsoft.com/expression/2010/effects" xmlns:ed="http://schemas.microsoft.com/expression/2010/drawing" x:Class="premierTest.RegisterPatient"
+        mc:Ignorable="d"
+        Title="RegisterPatient"
+        ResizeMode="CanResizeWithGrip"
+        WindowStartupLocation="CenterScreen" 
+        Width="1142" Height="766"
+        WindowState="Normal" WindowStyle="ThreeDBorderWindow" 
+>
+    <Grid Margin="0,0,2,-0.706"
+          Height="737.106"
+          VerticalAlignment="Top">
+
+        <Label x:Name="titre"
+               Content="AJOUT D'UN PATIENT"
+               Margin="84,22,98,0"
+               VerticalAlignment="Top"
+               HorizontalContentAlignment="Center"
+               FontFamily="Muli"
+               FontSize="48"
+               Height="76"
+               Foreground="#FFD4574B"
+               Width="950"/>
+
+        <Label x:Name="description"
+               Content="Informations personnelles"
+               Margin="308,82,541,0"
+               VerticalAlignment="Top" 
+               HorizontalContentAlignment="Center"
+               FontFamily="Muli"
+               FontSize="21.333"
+               Height="38"
+               Foreground="#FFD4574B"/>
+
+        <Canvas x:Name="Can_RegPat1"
+                Margin="320,155.218,165,-258.154">
+
+            <Label x:Name="lab_nomPat"
+                   Content="Nom"
+                   FontSize="26.667"
+                   FontFamily="Muli"
+                   Height="50"
+                   Width="320"
+                   d:LayoutOverrides="Width, Height"
+                   Foreground="#FFD4574B"/>
+
+            <Label x:Name="lab_prePat"
+                   Content="Prénom"
+                   FontSize="26.667"
+                   FontFamily="Muli"
+                   Height="50"
+                   Width="320"
+                   Canvas.Top="55"
+                   d:LayoutOverrides="Width"
+                   Foreground="#FFD4574B"/>
+
+            <Label x:Name="lab_naissPat"
+                   Content="Date naissance"
+                   FontSize="26.667"
+                   FontFamily="Muli"
+                   Height="50"
+                   Width="205.245"
+                   Canvas.Top="132"
+                   Foreground="#FFD4574B"/>
+
+            <Label x:Name="lab_sexePat"
+                   Content="Sexe"
+                   FontSize="26.667"
+                   FontFamily="Muli"
+                   Height="50"
+                   Width="69.2"
+                   Canvas.Top="132"
+                   Foreground="#FFD4574B"
+                   Canvas.Left="403.021"/>
+
+            <Label x:Name="lab_numTelPat"
+                   Content="N° téléphone patient"
+                   FontSize="26.667"
+                   FontFamily="Muli"
+                   Height="50"
+                   Width="318"
+                   d:LayoutOverrides="Height"
+                   Canvas.Top="318.936"
+                   Foreground="#FFD4574B"
+                   Canvas.Left="2" />
+
+            <Label x:Name="label_adrPat"
+                   Content="Adresse" 
+                   FontSize="26.667"
+                   FontFamily="Muli"
+                   Height="50"
+                   Width="320"
+                   d:LayoutOverrides="HorizontalAlignment, Width"
+                   Canvas.Left="2"
+                   Canvas.Top="373.936"
+                   Foreground="#FFD4574B"/>
+
+            <TextBox x:Name="txt_nomPat"
+                     Height="50"
+                     TextWrapping="Wrap"
+                     FontSize="26.667"
+                     Width="320"
+                     Canvas.Left="325"
+                     Foreground="#FFD4574B"/>
+
+            <TextBox x:Name="txt_prenomPat"
+                     Height="50"
+                     TextWrapping="Wrap"
+                     FontSize="26.667"
+                     Width="320"
+                     Canvas.Left="325"
+                     Canvas.Top="55"
+                     Foreground="#FFD4574B"/>
+
+            <TextBox x:Name="txt_numTelPat"
+                     TextWrapping="Wrap"
+                     FontSize="26.667"
+                     FontFamily="Muli" 
+                     Height="50" 
+                     Width="317" 
+                     Canvas.Left="325" 
+                     Canvas.Top="318.936"
+                     MaxLength="10"
+                     Foreground="#FFD4574B"/>
+
+            <TextBox x:Name="txt_adrPat"
+                     Height="100"
+                     TextWrapping="Wrap"
+                     FontSize="26.667"
+                     Width="320" 
+                     Canvas.Left="322" 
+                     Canvas.Top="373.936"
+                     Foreground="#FFD4574B"/>
+
+            <DatePicker x:Name="date_naissancePat"
+                        Canvas.Left="210.245"
+                        Canvas.Top="131"
+                        Height="51"
+                        Width="157.8"
+                        FontFamily="Muli" 
+                        FontSize="26.667" 
+                        DisplayDate="1992-12-16"
+                        Foreground="#FFD4574B"/>
+
+            <ComboBox x:Name="comboB_medGeneraliste"
+                      Canvas.Left="322"
+                      Canvas.Top="211.754"
+                      VerticalAlignment="Stretch"
+                      Width="316.6"
+                      Height="52.182"
+                      FontFamily="Muli" 
+                      FontSize="20"
+                      Foreground="#FFD4574B"/>
+
+            <Button x:Name="btn_precPat"
+                    Height="50"
+                    Content="Retour"
+                    Width="320"
+                    d:LayoutOverrides="HorizontalAlignment, Width"
+                    Click="btn_precPat_Click_1"
+                    Canvas.Left="-2"
+                    Canvas.Top="478.936"
+                    Background="#FFD4574B"
+                    BorderBrush="#FFD4574B" />
+
+            <Button x:Name="btn_suivPat"
+                    Height="50"
+                    Content="Suivant"
+                    Width="320"
+                    Canvas.Left="322"
+                    Canvas.Top="478.936"
+                    d:LayoutOverrides="HorizontalAlignment, Width"
+                    Click="btn_suivPat_Click"
+                    Background="#FFD4574B"
+                    BorderBrush="#FFD4574B" />
+
+            <ComboBox x:Name="comboB_sexePat"
+                      Canvas.Left="477.221"
+                      Canvas.Top="129.818"
+                      VerticalAlignment="Stretch"
+                      Width="164.779"
+                      Height="52.182"
+                      FontFamily="Muli"
+                      FontSize="20"
+                      Foreground="#FFD4574B"/>
+
+            <Label x:Name="lab_medGeneraliste"
+                   Content="Médecin généraliste"
+                   FontSize="26.667"
+                   FontFamily="Muli"
+                   Height="50"
+                   Width="320"
+                   Canvas.Top="213.936"
+                   Foreground="#FFD4574B"
+                   d:LayoutOverrides="Width"
+                   Canvas.Left="2"/>
+
+        </Canvas>
+
+        <!--Canvas invisible au boot -->
+        <Canvas x:Name="Can_RegPat2"
+                Margin="320,190.018,165,-258.154"
+                Visibility="Hidden">
+
+            <Label x:Name="lab_mutuelle"
+                   Content="Mutuelle"
+                   FontSize="26.667"
+                   FontFamily="Muli"
+                   Height="50"
+                   Width="320"
+                   d:LayoutOverrides="Width, Height"
+                   Foreground="#FFD4574B"
+                   Canvas.Left="2"/>
+
+            <Label x:Name="lab_hop"
+                   Content="Dernier hôpital visité"
+                   FontSize="26.667"
+                   FontFamily="Muli"
+                   Height="50"
+                   Width="318"
+                   Canvas.Top="61.729"
+                   Foreground="#FFD4574B"/>
+
+            <ComboBox x:Name="comboB_mut"
+                      FontSize="26.667"
+                      FontFamily="Muli"
+                      Height="50"
+                      Width="318.6"
+                      Canvas.Left="323"
+                      d:LayoutOverrides="Height"
+                      Foreground="#FFD4574B"/>
+
+            <Button x:Name="btn_precPat2"
+                    Height="50"
+                    Content="Précédent"
+                    Width="320"
+                    d:LayoutOverrides="HorizontalAlignment, Width"
+                    Canvas.Left="2" Canvas.Top="454.136"
+                    Click="btn_precPat2_Click"
+                    BorderBrush="#FFD4574B"
+                    Background="#FFD4574B" />
+
+            <Button x:Name="btn_submitPat"
+                    Height="50"
+                    Content="S'enregistrer"
+                    Width="320"
+                    Canvas.Left="327"
+                    Canvas.Top="454.136"
+                    d:LayoutOverrides="HorizontalAlignment, Width"
+                    Click="btn_submitPat_Click"
+                    BorderBrush="#FFD4574B"
+                    Background="#FFD4574B" />
+
+            <ComboBox x:Name="comboB_hop"
+                      FontSize="26.667"
+                      FontFamily="Muli"
+                      Height="50"
+                      Width="318.6"
+                      Canvas.Left="323"
+                      Foreground="#FFD4574B"
+                      d:LayoutOverrides="Height"
+                      Canvas.Top="61.729"/>
+
+            <Label x:Name="lab_allergies"
+                   Content="Allergies"
+                   FontSize="26.667"
+                   FontFamily="Muli"
+                   Height="50"
+                   Width="318"
+                   Canvas.Top="245.136"
+                   Foreground="#FFD4574B"
+                   d:LayoutOverrides="Height"
+                   Canvas.Left="2"/>
+
+            <TextBox x:Name="txt_allergies"
+                     TextWrapping="Wrap"
+                     FontSize="26.667"
+                     FontFamily="Muli"
+                     Height="50"
+                     Width="318.6"
+                     Canvas.Left="320"
+                     Foreground="#FFD4574B"
+                     Canvas.Top="245.136"
+                     d:LayoutOverrides="Height"/>
+
+            <Label x:Name="lab_NIS"
+                   Content="NIS"
+                   FontSize="26.667"
+                   FontFamily="Muli"
+                   Height="50"
+                   Width="318"
+                   Canvas.Top="183.136"
+                   Foreground="#FFD4574B"
+                   d:LayoutOverrides="Height"/>
+
+            <TextBox x:Name="txt_NIS"
+                     TextWrapping="Wrap"
+                     FontSize="26.667"
+                     FontFamily="Muli"
+                     Height="50"
+                     Width="318.6"
+                     Canvas.Left="323"
+                     Foreground="#FFD4574B"
+                     Canvas.Top="183.136"
+                     d:LayoutOverrides="Height"
+                     MaxLength="11" PreviewTextInput="txt_NIS_PreviewTextInput"/>
+
+            <Image x:Name="imgDocteur2"
+                   Width="228.895"
+                   Source="doctor.png" />
+
+            <Label x:Name="lab_TiersPay"
+                   Content="Tiers payant"
+                   FontSize="26.667"
+                   FontFamily="Muli"
+                   Height="50"
+                   Width="318"
+                   Canvas.Top="123.136"
+                   Foreground="#FFD4574B"
+                   d:LayoutOverrides="Height"/>
+
+            <RadioButton x:Name="radBtn_tiersPayOui"
+                         Content="Oui"
+                         Canvas.Left="323"
+                         Canvas.Top="123.136"
+                         Height="50"
+                         Width="153.91"
+                         Background="#FFD4574B"
+                         BorderBrush="#FFD4574B"
+                         Foreground="#FFD4574B"
+                         FontSize="26.667"
+                         FontFamily="Muli"/>
+
+            <RadioButton x:Name="radBtn_tiersPayNon"
+                         Content="Non"
+                         Canvas.Left="493.09"
+                         Canvas.Top="123.136"
+                         Height="50"
+                         Width="153.91"
+                         Background="#FFD4574B"
+                         BorderBrush="#FFD4574B"
+                         Foreground="#FFD4574B"
+                         FontSize="26.667"
+                         FontFamily="Muli"/>
+        </Canvas>
+    </Grid>
+</Window>

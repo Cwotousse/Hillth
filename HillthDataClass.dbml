@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Hillth" Class="HillthDataClassDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=ADRIEN-PC\SQLDEVEL;Initial Catalog=Hillth;Integrated Security=True" SettingsObjectName="premierTest.Properties.Settings" SettingsPropertyName="HillthConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Hopital" Member="Hopital">
+    <Type Name="Hopital">
+      <Column Name="IDHopital" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="LibelHopital" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="Hopital_FichePatient" Member="FichePatient" ThisKey="IDHopital" OtherKey="IDHopital" Type="FichePatient" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Specialisation" Member="Specialisation">
+    <Type Name="Specialisation">
+      <Column Name="IDSpec" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Honoraire" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="LibelSpec" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="Specialisation_Medecin" Member="Medecin" ThisKey="IDSpec" OtherKey="IDSpec" Type="Medecin" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Mutuelle" Member="Mutuelle">
+    <Type Name="Mutuelle">
+      <Column Name="IDMutuelle" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="LibelMutuelle" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="Mutuelle_FichePatient" Member="FichePatient" ThisKey="IDMutuelle" OtherKey="IDMutuelle" Type="FichePatient" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Utilisateurs" Member="Utilisateurs">
+    <Type Name="Utilisateurs">
+      <Column Name="IDUtilisateur" Type="System.String" DbType="NVarChar(12) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Mdp" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="Utilisateurs_Connexion" Member="Connexion" ThisKey="IDUtilisateur" OtherKey="IDUtilisateur" Type="Connexion" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Connexion" Member="Connexion">
+    <Type Name="Connexion">
+      <Column Name="IDMedecin" Type="System.String" DbType="NVarChar(12)" CanBeNull="true" />
+      <Column Name="IDUtilisateur" Type="System.String" DbType="NVarChar(12)" CanBeNull="true" />
+      <Association Name="Utilisateurs_Connexion" Member="Utilisateurs" ThisKey="IDUtilisateur" OtherKey="IDUtilisateur" Type="Utilisateurs" IsForeignKey="true" />
+      <Association Name="Medecin_Connexion" Member="Medecin" ThisKey="IDMedecin" OtherKey="IDMedecin" Type="Medecin" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.FichePatient" Member="FichePatient">
+    <Type Name="FichePatient">
+      <Column Name="NIS" Type="System.String" DbType="NVarChar(12) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Nom" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Prenom" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DateNaissance" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="TiersPayant" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="Adresse" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="numTel" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="IDHopital" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IDMutuelle" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Allergies" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Sexe" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Association Name="FichePatient_HistoriquePatient" Member="HistoriquePatient" ThisKey="NIS" OtherKey="NIS" Type="HistoriquePatient" />
+      <Association Name="Hopital_FichePatient" Member="Hopital" ThisKey="IDHopital" OtherKey="IDHopital" Type="Hopital" IsForeignKey="true" DeleteRule="CASCADE" />
+      <Association Name="Mutuelle_FichePatient" Member="Mutuelle" ThisKey="IDMutuelle" OtherKey="IDMutuelle" Type="Mutuelle" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HistoriquePatient" Member="HistoriquePatient">
+    <Type Name="HistoriquePatient">
+      <Column Name="NIS" Type="System.String" DbType="NVarChar(12) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IDMedecin" Type="System.String" DbType="NVarChar(12) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="DateDerniereAuscultation" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Association Name="FichePatient_HistoriquePatient" Member="FichePatient" ThisKey="NIS" OtherKey="NIS" Type="FichePatient" IsForeignKey="true" />
+      <Association Name="Medecin_HistoriquePatient" Member="Medecin" ThisKey="IDMedecin" OtherKey="IDMedecin" Type="Medecin" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Medecin" Member="Medecin">
+    <Type Name="Medecin">
+      <Column Name="IDMedecin" Type="System.String" DbType="NVarChar(12) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Nom" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Prenom" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Sexe" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="LieuTravail" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Convention" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="DateNaissance" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="IDSpec" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NumTel" Type="System.String" DbType="NVarChar(12)" CanBeNull="true" />
+      <Association Name="Medecin_Connexion" Member="Connexion" ThisKey="IDMedecin" OtherKey="IDMedecin" Type="Connexion" />
+      <Association Name="Medecin_HistoriquePatient" Member="HistoriquePatient" ThisKey="IDMedecin" OtherKey="IDMedecin" Type="HistoriquePatient" />
+      <Association Name="Specialisation_Medecin" Member="Specialisation" ThisKey="IDSpec" OtherKey="IDSpec" Type="Specialisation" IsForeignKey="true" DeleteRule="CASCADE" />
+    </Type>
+  </Table>
+  <Function Name="dbo.AuthentificationUser" Method="AuthentificationUser">
+    <Parameter Name="username" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="mdp" Type="System.String" DbType="NVarChar(50)" />
+    <ElementType Name="AuthentificationUserResult">
+      <Column Name="IDUtilisateur" Type="System.String" DbType="NVarChar(12) NOT NULL" CanBeNull="false" />
+      <Column Name="Mdp" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.InsertUtilisateur" Method="InsertUtilisateur">
+    <Parameter Name="id" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="mdp" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.InsertPatient" Method="InsertPatient">
+    <Parameter Name="nom" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="prenom" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="numTel" Type="System.String" DbType="NVarChar(15)" />
+    <Parameter Name="sexe" Type="System.String" DbType="NChar(10)" />
+    <Parameter Name="Adresse" Parameter="adresse" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="DateNaissance" Parameter="dateNaissance" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="NIS" Parameter="nIS" Type="System.String" DbType="NVarChar(12)" />
+    <Parameter Name="Allergies" Parameter="allergies" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="TiersPayant" Parameter="tiersPayant" Type="System.String" DbType="NChar(10)" />
+    <Parameter Name="IDMutuelle" Parameter="iDMutuelle" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IDHopital" Parameter="iDHopital" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.InsertHistorique" Method="InsertHistorique">
+    <Parameter Name="idMed" Type="System.String" DbType="NVarChar(12)" />
+    <Parameter Name="DateInscription" Parameter="dateInscription" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="NIS" Parameter="nIS" Type="System.String" DbType="NVarChar(12)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.AfficherLibelHop" Method="AfficherLibelHop">
+    <ElementType Name="AfficherLibelHopResult">
+      <Column Name="LibelHopital" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ModifierPatient" Method="ModifierPatient">
+    <Parameter Name="nom" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="prenom" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="sexe" Type="System.String" DbType="NChar(10)" />
+    <Parameter Name="TiersPayant" Parameter="tiersPayant" Type="System.String" DbType="NChar(10)" />
+    <Parameter Name="NIS" Parameter="nIS" Type="System.String" DbType="NVarChar(12)" />
+    <ElementType Name="ModifierPatientResult">
+      <Column Name="NIS" Type="System.String" DbType="NVarChar(12) NOT NULL" CanBeNull="false" />
+      <Column Name="Nom" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Prenom" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DateNaissance" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="TiersPayant" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="Adresse" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="numTel" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="IDHopital" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IDMutuelle" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Allergies" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Sexe" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="IDHopital1" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="LibelHopital" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.DeletePatient" Method="DeletePatient">
+    <Parameter Name="IDUtilisateur" Parameter="iDUtilisateur" Type="System.String" DbType="NVarChar(12)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.InsertMedecin" Method="InsertMedecin">
+    <Parameter Name="nom" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="prenom" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="numTel" Type="System.String" DbType="NVarChar(12)" />
+    <Parameter Name="sexe" Type="System.String" DbType="NChar(10)" />
+    <Parameter Name="Adresse" Parameter="adresse" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="DateNaissance" Parameter="dateNaissance" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="IDMedecin" Parameter="iDMedecin" Type="System.String" DbType="NVarChar(12)" />
+    <Parameter Name="convention" Type="System.String" DbType="NChar(10)" />
+    <Parameter Name="idspec" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>
